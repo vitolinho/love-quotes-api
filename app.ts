@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT
 
-const loveQuotes = [
+const loveQuotes: string[] = [
   "Tu es la lumière de ma vie et le soleil de mes jours.",
   "Avec toi, chaque jour est une aventure merveilleuse.",
   "Ton sourire illumine mon monde.",
@@ -112,7 +112,7 @@ app.listen(port, () => {
   console.log(`Server running on http://127.0.0.1:${port}`)
 })
 
-app.get('/', (req, res) => {
-  const randomIndex = Math.floor(Math.random() * loveQuotes.length)
+app.get('/', (req: any, res: any) => {
+  const randomIndex: number = Math.floor(Math.random() * loveQuotes.length)
   res.status(200).json({"data":loveQuotes[randomIndex]})
 })
