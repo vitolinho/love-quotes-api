@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const port = process.env.PORT
 
@@ -112,7 +113,7 @@ app.listen(port, () => {
   console.log(`Server running on http://127.0.0.1:${port}`)
 })
 
-app.get('/', (req: any, res: any) => {
+app.get('/', cors(), (req: any, res: any) => {
   const randomIndex: number = Math.floor(Math.random() * loveQuotes.length)
   res.status(200).json({"data":loveQuotes[randomIndex]})
 })
