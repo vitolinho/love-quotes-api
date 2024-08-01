@@ -114,5 +114,5 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
   const randomIndex = Math.floor(Math.random() * loveQuotes.length)
-  res.status(200).json(loveQuotes[randomIndex])
+  res.status(200).json({"data":loveQuotes[randomIndex]})
 })
