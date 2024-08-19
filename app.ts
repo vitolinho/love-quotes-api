@@ -107,6 +107,8 @@ const loveQuotes: string[] = [
   "Ton amour est mon refuge."
 ]
 
+console.log(loveQuotes.length)
+
 app.use(express.json())
 
 app.listen(port, () => {
